@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
 
 export const Widget = () => {
   return (
@@ -6,9 +8,17 @@ export const Widget = () => {
       <Button className="rounded-full shadow-lg hover:scale-105">Feedback</Button>
 
       <div>
-        <h3>Sedn us your feedback</h3>
+        <h3>Send us your feedback</h3>
         <form>
-          
+          <div>
+            <Label htmlFor="name">Name</Label>
+            <Input id="name" placeholder="Enter your name" />
+          </div>
+
+          <div>
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" placeholder="Enter your email" />
+          </div>
         </form>
       </div>
     </div>
