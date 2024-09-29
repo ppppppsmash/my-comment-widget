@@ -1,10 +1,12 @@
+import { Widget } from './components/Widget';
+
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <h1>Collect Feedback</h1>
+      <Widget />
     </>
   )
 }
