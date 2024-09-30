@@ -47,7 +47,7 @@ export const Widget = ({ projectId }: { projectId: string }) => {
 
         <Popover>
           <PopoverTrigger asChild>
-            <Button className="rounded-full shadow-lg hover:scale-105">
+            <Button className="rounded-full shadow-lg hover:scale-105 text-black">
               <MessageCircleIcon className="w-4 h-4 mr-2" />
               Comment
             </Button>
@@ -60,7 +60,6 @@ export const Widget = ({ projectId }: { projectId: string }) => {
             { submitted ? (
                 <div>
                   <h3 className="text-lg font-bold">Thank you for your comment!</h3>
-                  <p className="mt-4">We will review your comment and get back to you soon.</p>
                 </div>
               ) : (
                 <div>
@@ -89,6 +88,9 @@ export const Widget = ({ projectId }: { projectId: string }) => {
                   </div>
 
                   <div className="flex items-center justify-between">
+                    <p className="text-sm text-muted-foreground">
+                      What do you think of my portfolio?
+                    </p>
                     <div className="flex items-center gap-2">
                       {[...Array(5)].map((_, index) => (
                         <StarIcon
@@ -98,9 +100,9 @@ export const Widget = ({ projectId }: { projectId: string }) => {
                         />
                       ))}
                     </div>
-
-                    <Button type="submit">Submit</Button>
                   </div>
+                  
+                  <Button type="submit" className="text-white bg-[#333333]">Submit</Button>
                 </form>
               </div>
             )}
