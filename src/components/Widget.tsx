@@ -49,7 +49,7 @@ export const Widget = ({ projectId }: { projectId: string }) => {
           <PopoverTrigger asChild>
             <Button className="rounded-full shadow-lg hover:scale-105">
               <MessageCircleIcon className="w-4 h-4 mr-2" />
-              Feedback
+              Comment
             </Button>
           </PopoverTrigger>
 
@@ -59,12 +59,12 @@ export const Widget = ({ projectId }: { projectId: string }) => {
 
             { submitted ? (
                 <div>
-                  <h3 className="text-lg font-bold">Thank you for your feedback!</h3>
-                  <p className="mt-4">We will review your feedback and get back to you soon.</p>
+                  <h3 className="text-lg font-bold">Thank you for your comment!</h3>
+                  <p className="mt-4">We will review your comment and get back to you soon.</p>
                 </div>
               ) : (
                 <div>
-                <h3 className="text-lg font-bold">Send us your feedback</h3>
+                <h3 className="text-lg font-bold">Send me your comments</h3>
 
                 <form className="space-y-2" onSubmit={onSubmit}>
                   <div className="grid grid-cols-2 gap-4">
@@ -80,10 +80,10 @@ export const Widget = ({ projectId }: { projectId: string }) => {
                   </div>
 
                   <div className="space-y-2">
-                      <Label htmlFor="feedback">Feedback</Label>
+                      <Label htmlFor="comment">Comment</Label>
                       <Textarea
                         id="message"
-                        placeholder="Tell us what you think"
+                        placeholder="If you have any comments, please share them here. I would like to improve my work."
                         className="min-h-[100px]"
                     />
                   </div>
