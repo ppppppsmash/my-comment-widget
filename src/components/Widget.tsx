@@ -9,6 +9,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
+import supabase from '@/supabaseClient';
+
 import tailwindStyles from '@/index.css?inline';
 
 export const Widget = () => {
@@ -19,7 +21,7 @@ export const Widget = () => {
     setRating(index + 1);
   };
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target;
     const data = {
@@ -29,8 +31,11 @@ export const Widget = () => {
       rating,
     };
 
+    const { data: returnedData, error } = await supabase.rpc('add_feedback', data);
+
     setSubmitted(true);
-    console.log(data);
+    console.log(returnedData);
+    console.log(error);
   };
 
   return (
