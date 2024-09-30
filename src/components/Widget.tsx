@@ -47,6 +47,9 @@ export const Widget = () => {
           </PopoverTrigger>
 
           <PopoverContent className="widget rounded-lg bg-card p-4 shadow-lg w-full max-w-md">
+
+            <style>{tailwindStyles}</style>
+
             { submitted ? (
                 <div>
                   <h3 className="text-lg font-bold">Thank you for your feedback!</h3>
