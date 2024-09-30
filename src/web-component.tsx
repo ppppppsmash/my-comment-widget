@@ -15,7 +15,7 @@ class WidgetWebComponent extends HTMLElement {
     const props = this.getPropsFromAttributes();
     if (this.shadowRoot) {
       const root = createRoot(this.shadowRoot);
-      root.render(<Widget {...props} />);
+      root.render(<Widget projectId={""} {...props} />);
     }
   }
 
