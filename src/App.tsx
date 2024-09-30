@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <Widget />
+      <Widget projectId="8" />
     </>
   )
 }

@@ -13,7 +13,7 @@ import supabase from '@/supabaseClient';
 
 import tailwindStyles from '@/index.css?inline';
 
-export const Widget = () => {
+export const Widget = ({ projectId }: { projectId: string }) => {
   const [rating, setRating] = useState<number>(0);
   const [submitted, setSubmitted] = useState<boolean>(false);
 
@@ -25,15 +25,21 @@ export const Widget = () => {
     e.preventDefault();
     const form = e.target;
     const data = {
-      name: ((form as HTMLFormElement).elements.namedItem('name') as HTMLInputElement).value,
-      email: ((form as HTMLFormElement).elements.namedItem('email') as HTMLInputElement).value,
-      feedback: ((form as HTMLFormElement).elements.namedItem('feedback') as HTMLTextAreaElement).value,
-      rating,
+      // name: ((form as HTMLFormElement).elements.namedItem('name') as HTMLInputElement).value,
+      // email: ((form as HTMLFormElement).elements.namedItem('email') as HTMLInputElement).value,
+      // feedback: ((form as HTMLFormElement).elements.namedItem('feedback') as HTMLTextAreaElement).value,
+      // rating,
+      p_project_id: projectId,
+      p_user_name: ((form as HTMLFormElement).elements.namedItem('name') as HTMLInputElement).value,
+      p_user_email: ((form as HTMLFormElement).elements.namedItem('email') as HTMLInputElement).value,
+      p_message: ((form as HTMLFormElement).elements.namedItem('message') as HTMLTextAreaElement).value,
+      p_rating: rating,
     };
 
     const { data: returnedData, error } = await supabase.rpc('add_feedback', data);
 
     setSubmitted(true);
+    console.log(data)
     console.log(returnedData);
     console.log(error);
   };
@@ -80,7 +86,7 @@ export const Widget = () => {
                   <div className="space-y-2">
                       <Label htmlFor="feedback">Feedback</Label>
                       <Textarea
-                        id="feedback"
+                        id="message"
                         placeholder="Tell us what you think"
                         className="min-h-[100px]"
                     />
