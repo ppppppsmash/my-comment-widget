@@ -101,8 +101,8 @@ export const Widget = ({ projectId }: { projectId: string }) => {
                       ))}
                     </div>
                   </div>
-                  
-                  <Button type="submit" className="text-white bg-[#333333]">Submit</Button>
+
+                  <Button type="submit" className="text-white bg-[#333333] hover:bg-[#555555]">Submit</Button>
                 </form>
               </div>
             )}
