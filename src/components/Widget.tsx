@@ -25,10 +25,6 @@ export const Widget = ({ projectId }: { projectId: string }) => {
     e.preventDefault();
     const form = e.target;
     const data = {
-      // name: ((form as HTMLFormElement).elements.namedItem('name') as HTMLInputElement).value,
-      // email: ((form as HTMLFormElement).elements.namedItem('email') as HTMLInputElement).value,
-      // feedback: ((form as HTMLFormElement).elements.namedItem('feedback') as HTMLTextAreaElement).value,
-      // rating,
       p_project_id: projectId,
       p_user_name: ((form as HTMLFormElement).elements.namedItem('name') as HTMLInputElement).value,
       p_user_email: ((form as HTMLFormElement).elements.namedItem('email') as HTMLInputElement).value,
