@@ -95,7 +95,7 @@ export const Widget = ({ projectId }: { projectId: string }) => {
                       {[...Array(5)].map((_, index) => (
                         <StarIcon
                           key={index}
-                          className={`cursor-pointer h-5 w-5 ${rating > index ? 'fill-primary' : 'fill-muted stroke-muted-foreground'}`}
+                          className={`cursor-pointer h-5 w-5 ${rating > index ? 'fill-[#333333]' : 'fill-muted stroke-muted-foreground'}`}
                           onClick={() => onSelectStar(index)}
                         />
                       ))}
